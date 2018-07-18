@@ -21,18 +21,13 @@ for i in requests_tup:
 for j in available_tup:
     available_dic[(j.split(",")[0])] = j.split(",")[1]
 
+for user in range(len(users)):
+    user_requests = []
+    for isbn, user_id in request_dic.items():
+        if int(user_id) == users[user]:
+            user_requests.append(isbn)
+    for isbn, user_ids in available_dic.items():
+        if user_requests[user] == isbn:
+            possible_matches.append(user_ids)
 
-
-while True:
-
-    for i in range(len(users)):
-
-        i_requests = []
-        for k, v in request_dic.items():
-            if int(v) == users[i]:
-                i_requests.append(k)
-        print(i_requests)
-    break
-
-
-
+    print(possible_matches)
