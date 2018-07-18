@@ -1,9 +1,7 @@
-first_group = []
-
 request_dic = {}
 available_dic = {}
 
-users = [101,102,103]
+users = [101, 102, 103]
 
 matched_users = []
 possible_matches = []
@@ -27,12 +25,11 @@ for j in available_tup:
 
 while True:
 
-    for i in users:
+    for i in range(len(users)):
 
         i_requests = []
-        for k, v in available_dic.items():
-            print("is ", v, "= ", i, ' ?')
-            if i == v:
+        for k, v in request_dic.items():
+            if int(v) == users[i]:
                 i_requests.append(k)
         print(i_requests)
     break
